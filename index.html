@@ -44,7 +44,7 @@
         function setup() {
             createCanvas(windowWidth, windowHeight);
             noLoop();
-            setInterval(draw, 30); // Llama a la función draw cada 30 ms
+            setInterval(draw, 50); // Llama a la función draw cada 50 ms para un movimiento más lento
         }
 
         function draw() {
@@ -59,7 +59,7 @@
 
             // Actualizar y dibujar el texto en movimiento
             let messageElement = document.getElementById('animatedMessage');
-            offset += direction * 2; // Velocidad de movimiento
+            offset += direction * 1; // Reducir la velocidad del movimiento
             if (offset > 10 || offset < -10) {
                 direction *= -1; // Cambiar dirección
             }
