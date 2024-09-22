@@ -1,85 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores Amarillas para Antonella</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #2E8B57; /* Fondo verde del campo */
-        }
-        .message {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translate(-50%, 0);
-            color: white; /* Color del texto */
-            font-family: 'Georgia', serif; /* Tipo de letra elegante */
-            font-size: 28px; /* Tamaño de letra */
-            text-align: center; /* Centrar texto */
-            background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
-            padding: 20px; /* Espaciado alrededor del texto */
-            border-radius: 10px; /* Bordes redondeados */
-            z-index: 1; /* Asegurarse de que el texto esté por encima de las flores */
-        }
-    </style>
+    <title> Flores Amarillas &lt;3</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@1&display=swap" rel="stylesheet">
+    <!--
+        Codigo By: MartL7
+    -->
 </head>
 <body>
-    <div class="message" id="animatedMessage">
-        Flores amarillas al viento giran,<br>
-        como pequeños soles que no dejan de brillar,<br>
-        recordándome a Antonella, fuerte y sencilla,<br>
-        una chispa constante, difícil de olvidar.
+
+    <div class="Contenedor-Binicio">
+        <button class="Button" id="BVer"> Clicka aqui </button>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script>
-        let offset = 0;
-        let direction = 1;
 
-        function setup() {
-            createCanvas(windowWidth, windowHeight);
-            noLoop();
-            setInterval(draw, 50); // Llama a la función draw cada 50 ms para un movimiento más lento
-        }
+    <div class="Con-Emergente">
+        <div id="resultado" class="cua">
+            <p id="res">
+                Hola, antes de iniciar, solo quiero recordarte que eres 
+                muy especial para mí y gracias por todo. &lt;3
+            </p>    
+            <button id="BotonCerrar" class="Button">Cerrar</button>
+        </div>
+    </div>
 
-        function draw() {
-            background('#2E8B57'); // Color del fondo del campo
+    <div class="Con-2">
+        <h1 id="Titulo"> Elije una Opcion </h1>
+        <div class="Con">
+            <button class="Button" id="B1"> 1 Flor </button>
+            <button class="Button" id="B12"> 12 Flores :) </button>
+        </div>
+    </div>
 
-            // Dibujar flores amarillas en posiciones aleatorias
-            for (let i = 0; i < 100; i++) {
-                let x = random(width);
-                let y = random(height);
-                drawFlower(x, y);
-            }
+    <main class="Contenedor">
+        <canvas id="Flor" class="Flor" width="800" height="600"></canvas>
 
-            // Actualizar y dibujar el texto en movimiento
-            let messageElement = document.getElementById('animatedMessage');
-            offset += direction * 1; // Reducir la velocidad del movimiento
-            if (offset > 10 || offset < -10) {
-                direction *= -1; // Cambiar dirección
-            }
-            messageElement.style.transform = `translate(-50%, ${offset}px)`;
-        }
+        <div class="Texto">
+            <h2 id="Text">Para la niña mas Linda del Mundo.</h2>
+        </div>
 
-        function drawFlower(x, y) {
-            push();
-            translate(x, y);
-            stroke(255, 204, 0);
-            strokeWeight(2);
-            fill(255, 255, 102); // Color amarillo para los pétalos
-            for (let i = 0; i < 8; i++) {
-                ellipse(0, 10, 20, 40);
-                rotate(PI / 4);
-            }
-            fill(255, 153, 0); // Color del centro de la flor
-            ellipse(0, 0, 20, 20);
-            pop();
-        }
-    </script>
+    </main>
+
+    <script src="Js/app.js"></script>
+    <script src="Js/Dis.js"></script>
 </body>
 </html>
